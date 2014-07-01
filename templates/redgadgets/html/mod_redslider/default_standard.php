@@ -31,28 +31,29 @@ $document->addStyleSheet(JURI::base(true) . '/modules/mod_redslider/assets/css/s
 	<div class="content">
 		<img src="<?php echo $slide->imgslide; ?>"/>
 	</div>
+	<div class="container"> 
+		<div class="caption-description">
+			<?php if ($slide_params->caption): ?>
+				<h1><?php echo $slide_params->caption; ?></h1>
+			<?php endif;?>
+			<p>
+			<?php if ($slide_params->description): ?>
+				<?php echo $slide_params->description; ?>
+			<?php endif;?>
+			<?php if ($slide_params->link): ?>
+				<?php
+				$link_text = $slide_params->link_text;
+				$link = $slide_params->link;
 
-	<div class="caption-description">
-		<?php if ($slide_params->caption): ?>
-			<h1><?php echo $slide_params->caption; ?></h1>
-		<?php endif;?>
-		<p>
-		<?php if ($slide_params->description): ?>
-			<?php echo $slide_params->description; ?>
-		<?php endif;?>
-		<?php if ($slide_params->link): ?>
-			<?php
-			$link_text = $slide_params->link_text;
-			$link = $slide_params->link;
+				if (!$link_text)
+				{
+					$link_text = $link;
+				}
 
-			if (!$link_text)
-			{
-				$link_text = $link;
-			}
-
-			?>
-			<?php echo '<a href="' . JRoute::_($link) . '">' . $link_text . '</a>'; ?>
-		<?php endif;?>
-		</p>
+				?>
+				<?php echo '<a href="' . JRoute::_($link) . '">' . $link_text . '</a>'; ?>
+			<?php endif;?>
+			</p>
+		</div>
 	</div>
 </li>

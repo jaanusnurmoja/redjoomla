@@ -40,8 +40,8 @@ ol
 
 .container
 {
-	padding-left: 25px;
-	padding-right: 25px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .stock_addtocart()
@@ -68,17 +68,17 @@ ol
 	position: relative;
 	z-index: 1001;
 	zoom    : 1;
-	background: url("../images/bg.png") repeat scroll center top transparent;
-	padding-top: 20px;
+	background: #FFF;
+	padding-top: 0px;
 
 	.container
 	{
-		background: url("../images/container-bg.png") repeat scroll center top transparent;
+		background: #FFF;
 	}
 
 	&:before {
 		z-index: -1;
-		background: url("../images/bg2.png") no-repeat scroll center top transparent;
+		background: #FFF;
 		position : absolute;
 		top      : 0;
 		left     : 0;
@@ -178,10 +178,12 @@ h2, h3
 /** Top bar **/
 #topbar
 {
-	background-color: transparent;
+	background-color: #287ab4;
 	font-family: @headings-font-family;
+	width: 100%;
 	float: right;
-	margin-top: 30px;
+	margin-top: 0;
+	.container{background-color:#287ab4; color:#FFF; }
 	.fontsize(16);
 
 	.moduletable
@@ -232,7 +234,10 @@ h2, h3
 		}
 
 		ul{
+
 			li{
+
+				color: #FFF;
 				display: inline;
 				border-right: 1px solid @link-color;
 				padding: 0px 10px;
@@ -289,6 +294,22 @@ h2, h3
 			}
 		}
 	}
+	.moduletable_logintop
+	{
+		ul
+		{
+			float:right;
+			li > a
+			{
+				border-right: 2px solid #FFFFFF;
+				color: #FFF;
+				line-height: 0;
+				margin:9px 0 0 0px;
+
+			}
+			
+		}
+	}
 }
 
 /** Header **/
@@ -301,19 +322,15 @@ h2, h3
 
 	#top
 	{
-		position: absolute;
-		bottom: 5%;
-		right: -(@grid-gutter-width/2);
 	}
 
 	#logo
 	{
-		margin-top: -46px;
 		position: relative;
 
 		img
 		{
-			padding-left: 17px;
+			padding-left: 0px;
 		}
 	}
 
@@ -322,19 +339,10 @@ h2, h3
 	{
 		.moduletable
 		{
-			width: 55%;
-			float: left;
-
 			h3
 			{
 				cursor: pointer;
 			}
-
-			&:first-child
-			{
-				width: 45%;
-			}
-
 			.mod_redshop_wishlist
 			{
 				position: absolute;
@@ -473,11 +481,11 @@ h2, h3
 /** Main menu - Search **/
 #menusearch
 {
+	background-color: #555;
 	margin-top: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-	margin-bottom: 20px;
-
+	.container{background-color: #555;}
 	/** Main menu **/
 	#menu
 	{
@@ -490,12 +498,17 @@ h2, h3
 		.navbar-collapse
 		{
 			padding: 0px;
-
-			.nav > li.active > a,
-			.nav > li > a:hover
+			.nav > li.active
 			{
-				border-bottom: 5px solid @navbar-default-link-active-color;
+				border-top: 5px solid @navbar-default-link-active-color;
+				color:#FFF;
 			}
+
+			/*.nav > li.active > a,
+			{
+				border-top: 5px solid @navbar-default-link-active-color;
+				color:#FFF;
+			}*/
 
 			/*.nav > li.parent > a:hover
 			{
@@ -507,6 +520,7 @@ h2, h3
 				padding: 0 15px;
 				> a, > span
 				{
+					color: #FFF;
 					.fontsize(25);
 					font-family: @arvobold;
 					padding: 10px 0px 19px 0px;
@@ -570,143 +584,180 @@ h2, h3
 }
 
 /** Tabs **/
-#grid-tab, .moduletable-products, .module-products
+#grid-tab-1, #grid-tab, .moduletable-products, .module-products
 {
-	margin-top: 25px;
+	margin-top: 0px;
 	margin-bottom: 35px;
 	overflow: hidden;
-
-	.mod_redshop_products_wrapper
+	.feature, .sale
 	{
-		overflow: hidden;
-		.mod_redshop_products_horizontal
+
+		h3{border: 1px solid #c2c2c2;padding-left: 20px;padding-top: 7px;height: 50px;margin-top:0px;}
+		.mod_redshop_products_wrapper
 		{
-			padding: 0px;
-			height: auto;
-			.mod_redshop_products_outer
+			overflow: hidden;
+			.mod_redshop_products_horizontal
 			{
-				width: 100%;
-				padding: 0px floor(@grid-gutter-width/2);
+				padding: 0px;
 				height: auto;
-
-				.mod_redshop_products_inner
+				.mod_redshop_products_outer
 				{
-					position: relative;
-					.mod_redshop_products_image
+					width: 100%;
+					padding: 0px 0 0px 15px;
+					height: auto;
+					.mod_redshop_price
 					{
-						border: 1px solid #000000;
+								height:189px ;
+								border-left: 1px solid #2979b4;
+								border-right:1px solid #2979b4;
+								border-bottom:1px solid #2979b4;
 					}
-
-					.mod_redshop_products_price, .mod_redmainprice
+					.mod_redshop_products_inner
 					{
-						font-family: @headings-font-family;
-						.fontsize(20);
-						color: @headings-color;
-						float: left;
-						padding-top: 15px;
-					}
-
-					.mod_redmainprice
-					{
-						margin-left: 10px;
-					}
-
-					.mod_redoldprice
-					{
-						font-family: @headings-font-family;
-						.fontsize(20);
-						color: #555555;
-						float: left;
-						padding-top: 15px;
-					}
-
-					.mod_redshop_products_addtocart
-					{
-						float: left;
-						padding-top: 7px;
-
-						.product-cart-link
+						position: relative;
+						.mod_redshop_products_image
 						{
-							width: auto;
+							border: 1px solid #2979b4;
+						}
 
-							> a span, > span a
+							.mod_redshop_products_price, .mod_redmainprice
 							{
-								.btn;
-								.btn-default;
-								text-transform: uppercase;
+								font-family: @headings-font-family;
+								.fontsize(20);
+								color: @headings-color;
+								float: left;
+								padding-top: 5px;
+								padding-left:10px;
 							}
-
-							> span.stock_addtocart
-							{
-								.btn;
-								.btn-warning;
-								text-transform: uppercase;
-
-								&:hover
+								.mod_redmainprice
 								{
-									cursor: default;
-									background-color: @btn-warning-bg;
+									margin-left: 10px;
 								}
+
+								.mod_redoldprice
+								{
+									font-family: @headings-font-family;
+									.fontsize(20);
+									color: #555555;
+									float: left;
+									padding-top: 5px;
+									padding-left:10px;
+								}
+
+								.mod_redshop_products_addtocart
+								{
+									/*text-indent: -10000px;*/
+									background: #2979b4;
+									float: left;
+									padding-top: 0px;
+									height:40px;
+									width: 269px;
+									position: relative;
+									bottom: 5px;
+
+									.product-cart-link
+									{
+										width: auto;
+
+										> a span, > span a
+										{
+											.btn;
+											.btn-default;
+											text-transform: uppercase;
+										}
+
+										> span.stock_addtocart
+										{
+											.btn;
+											.btn-warning;
+											text-transform: uppercase;
+
+											&:hover
+											{
+												cursor: default;
+												background-color: @btn-warning-bg;
+											}
+										}
+									}
+									.cart-link
+									{
+										a span
+										{
+											background: url(../images/add.png)no-repeat;
+											color: #fff;
+											height: 45px;
+											text-indent: -10000px;
+											display: block;
+											position: relative;
+											bottom: 5px;
+											left: 81px;
+										}
+									}
+
+								}
+						
+
+						.mod_redshop_products_title
+						{
+							clear: both;
+							border-top: 1px solid #2979b4;
+							font-family: @headings-font-family;
+							color: @headings-color;
+							.fontsize(20);
+							padding-top: 10px;
+							padding-bottom: 10px;
+							padding-left:10px;
+							margin-top: 3px;
+							float: left;
+							display: block;
+							width: 100%;
+							line-height: normal;
+							text-transform: uppercase;
+
+							a
+							{
+								color: @headings-color;
 							}
 						}
 
-						
-					}
-
-					.mod_redshop_products_title
-					{
-						clear: both;
-						border-top: 2px solid #999999;
-						font-family: @headings-font-family;
-						color: @headings-color;
-						.fontsize(20);
-						padding-top: 10px;
-						padding-bottom: 10px;
-						margin-top: 12px;
-						float: left;
-						display: block;
-						width: 100%;
-						line-height: normal;
-						text-transform: uppercase;
-
-						a
+						.mod_redshop_products_desc
 						{
-							color: @headings-color;
+							float: left;
+							padding-left:10px;
 						}
-					}
 
-					.mod_redshop_products_desc
-					{
-						float: left;
-					}
-
-					.mod_redshop_products_conner
-					{
-						background: url("../images/conner.png") no-repeat scroll right top transparent;
-						background-size: 100% 100%;
-						color: #FFFFFF;
-						font-family: @headings-font-family;
-						height: 30%;
-						padding-right: 2%;
-						padding-top: 5%;
-						position: absolute;
-						right: 0;
-						text-align: right;
-						top: 0;
-						width: 30%;
-						.fontsize(16);
+						.mod_redshop_products_conner
+						{
+							background: url("../images/Sale.png") no-repeat scroll right top transparent;
+							background-size: 100% 100%;
+							color: #FFFFFF;
+							font-family: @headings-font-family;
+							height: 75px;
+							margin:5px;
+							padding-right: 2%;
+							padding-top: 5%;
+							position: absolute;
+							right: 0;
+							text-indent: 1000px;
+							text-align: right;
+							top: 0;
+							width: 75px;
+							.fontsize(16);
+						}
 					}
 				}
 			}
 		}
+		clear: both;
 	}
+	.sale{padding-top: 30px;}
+	.custom.col-md-4{width:100%;}
 }
 
 /** Sliders **/
 
 #slider
 {
-	padding-top: 5px;
 }
 
 .bx-wrapper
@@ -720,8 +771,10 @@ h2, h3
 
 		ul
 		{
+
 			li
 			{
+				max-height: 478px;
 				.slidebg
 				{
 					background: url("../images/slidebg.png") no-repeat scroll left bottom transparent;
@@ -733,11 +786,12 @@ h2, h3
 				.caption-description
 				{
 					bottom: 0px;
-					top:  auto;
+					top:  0;
+					right:auto;
 					height: auto;
-					width: 100%;
+					width: 36%;
 					color: #FFFFFF;
-					padding: 1% 6% 3% 6%;
+					padding: 9% 5% 0% 6%;
 					background: @headings-color;
 					.opacity(0.8);
 
@@ -755,11 +809,23 @@ h2, h3
 					}
 
 					a{
-						display: inline;
+						display: block;
+						border: 1px solid #FFFFFF;
+						background-color: red;
+						font-size: 25px;
+						padding:5px;
+						text-align: center;
+						width: 66%;
+						margin-top: 5px;
 						color: #FFFFFF;
 					}
 				}
 			}
+		}
+		img
+		{
+			max-width: 100%;
+			min-width: 100%;
 		}
 	}
 
@@ -1014,13 +1080,24 @@ h2, h3
 	}
 
 }
+.navbar-nav > li > .dropdown-menu
+{
+	background: url("../images/dropdown-menu-icon.png") no-repeat scroll top left;
+	margin-top: -5px !important;
+	padding-top: 5px !important;
 
+	li{
+		background-color: #287ab4;
+	}
+
+}
 .dropdown-menu
 {
 	padding: 0px;
 	left: 15px;
 	border: 0px;
 	margin-top: -5px !important;
+	background-color: #287ab4;
 	li
 	{
 		a
@@ -1061,7 +1138,7 @@ h2, h3
 
 	.footer-bottom
 	{
-		background: url("../images/footer-bg.png") no-repeat scroll center bottom transparent;
+		background: #FFF;
 		height: 49px;
 		width: 100%;
 	}
@@ -1736,7 +1813,7 @@ h2, h3
 
 		.product_conner
 		{
-			background: url("../images/conner.png") no-repeat scroll right top transparent;
+			background: url("../images/Sale.png") no-repeat scroll right top transparent;
 			color: #FFFFFF;
 			font-family: @headings-font-family;
 			.fontsize(16);
@@ -3545,8 +3622,9 @@ button
 // General module styles (they can be used with any other style, or in any module position or even div where they're needed)
 .familybusiness
 {
-	background: url("../images/modules/family_business.png") no-repeat scroll top center transparent;
+	background: #555555 url("../images/modules/Delivery-Truck-Side-View.png") no-repeat scroll center;
 	padding-top: 150px;
+	color: #FFF;
 	text-align: center;
 
 	.familybusiness {
@@ -3556,15 +3634,17 @@ button
 
 	> h3
 	{
+		color:#FFF !important;
 		margin-top: 5px;
 	}
 }
 
 .betteringredients
 {
-	background: url("../images/modules/betteringredients.png") no-repeat scroll top center transparent;
+	background: #555555 url("../images/modules/Telephone-Location.png") no-repeat scroll center;
 	padding-top: 150px;
 	text-align: center;
+	color: #FFF;
 
 	.betteringredients {
 		background-image: none;
@@ -3574,16 +3654,17 @@ button
 	> h3
 	{
 		margin-top: 5px;
-		color: @headings-color !important;
+		color: #FFF !important;
 		.fontsize(25);
 	}
 }
 
 .highquality
 {
-	background: url("../images/modules/highquality.png") no-repeat scroll top center transparent;
+	background: #555555 url("../images/modules/Gift-Box.png") no-repeat scroll center;
 	padding-top: 150px;
 	text-align: center;
+	color: #FFF;
 
 	.highquality {
 		background-image: none;
@@ -3593,7 +3674,7 @@ button
 	> h3
 	{
 		margin-top: 5px;
-		color: @headings-color !important;
+		color: #FFF !important;
 		.fontsize(25);
 	}
 }

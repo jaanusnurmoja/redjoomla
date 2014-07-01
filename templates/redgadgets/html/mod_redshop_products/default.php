@@ -161,7 +161,7 @@ for ($i = 0; $i < count($rows); $i++)
 				$product_price_dis = $producthelper->getProductFormattedPrice($product_price);
 			}
 
-			$disply_text = "<div class='mod_redshop_products_price'>" . $product_price_dis . "</div>";
+			$disply_text = "<div class='mod_redshop_price'><div class='mod_redshop_products_price'>" . $product_price_dis . "</div>";
 
 			if ($row->product_on_sale && $product_price_discount > 0)
 			{
@@ -172,7 +172,7 @@ for ($i = 0; $i < count($rows); $i++)
 
 					if ($show_discountpricelayout)
 					{
-						echo "<div id='mod_redoldprice' class='mod_redoldprice'><span style='text-decoration:line-through;'>" . $producthelper->getProductFormattedPrice($product_price) . "</span></div>";
+						echo "<div class='mod_redshop_price'><div id='mod_redoldprice' class='mod_redoldprice'><span style='text-decoration:line-through;'>" . $producthelper->getProductFormattedPrice($product_price) . "</span></div>";
 						$product_price = $product_price_discount;
 						echo "<div id='mod_redmainprice' class='mod_redmainprice'>" . $producthelper->getProductFormattedPrice($product_price_discount) . "</div>";
 					}
@@ -282,7 +282,7 @@ for ($i = 0; $i < count($rows); $i++)
 	}
 
 
-	echo "</div></div></div>";
+	echo "</div></div></div></div>";
 }
 
 echo "</div>";

@@ -30,44 +30,54 @@ defined('_JEXEC') or die('Restricted access');
 	<body <?php if ($bodyclass != "") : ?> class="<?php echo $bodyclass ?>"<?php endif; ?> >
 
 	<div class="wrapper-main" <?php echo $bodystyle ?>>
-		<div class="container">
-			<?php if ($this->countModules('topbar')) : ?>
+		<?php if ($this->countModules('topbar')) : ?>
 			<div id="topbar">
+				<div class="container">
 				<w:module type="none" name="topbar" chrome="xhtml" />
+				</div>
 			</div>
 			<?php endif; ?>
-
-			<!-- header -->
-			<header id="header">
-				<div class="row clearfix">
-	                <w:logo name="top" />
-					<div class="clear"></div>
-				</div>
-			</header>
-
-			<div id="menusearch" class="row">
-			<?php if ($this->countModules('menu')) : ?>
-				<!-- menu -->
-				<div id="menu" class="<?php echo $classmenu ?>">
-					<w:nav name="menu" />
-				</div>
-			<?php endif; ?>
-
-			<?php if ($this->countModules('search')) : ?>
-				<!-- search -->
-				<div id="search" class="col-md-4 col-sm-3">
-					<w:module type="none" name="search" chrome="xhtml" />
-				</div>
-			<?php endif; ?>
+		<!-- header -->
+		<header id="header">
+			<div class="container">
+                <w:logo name="top" />
+				<div class="clear"></div>
 			</div>
+		</header>
+		<div id="menusearch" class="row">
+			<div class="container">
+				<?php if ($this->countModules('menu')) : ?>
+					<!-- menu -->
+					<div id="menu" class="<?php echo $classmenu ?>">
+							<w:nav name="menu" />
+					</div>
+				<?php endif; ?>
+
+				<?php if ($this->countModules('search')) : ?>
+					<!-- search -->
+					<div id="search" class="col-md-4 col-sm-3">
+						<w:module type="none" name="search" chrome="xhtml" />
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php if ($this->countModules('slider')) : ?>
+			<!-- slider -->
+			<div id="slider">
+				<w:module type="none" name="slider" chrome="xhtml" />
+			</div>
+		<?php endif; ?>
+
+		<div class="container">
+			
 			<!-- breadcrumbs -->
 			<div id="breadcrumbs">
 				<w:module type="single" name="breadcrumbs" chrome="none" />
 			</div>
-			<?php if ($this->countModules('slider')) : ?>
-				<!-- slider -->
-				<div id="slider">
-					<w:module type="none" name="slider" chrome="xhtml" />
+			<?php if ($this->countModules('grid-tab-1')) : ?>
+				<!-- grid-tab-1 -->
+				<div id="grid-tab-1">
+					<w:module type="none" name="grid-tab-1" chrome="xhtml" />
 				</div>
 			<?php endif; ?>
 

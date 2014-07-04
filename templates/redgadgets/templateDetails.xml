@@ -37,6 +37,7 @@
 		<position>search</position>
 		<position>featured</position>
 		<position>slider</position>
+		<position>grid-tab-1</position>
 		<position>grid-top</position>
 		<position>grid-tab</position>
 		<position>above-content</position>
@@ -47,6 +48,8 @@
 		<position>grid-bottom</position>
 		<position>bottom-menu</position>
 		<position>footer</position>
+		<position>footer-bottom</position>
+		<position>copyright</position>
 	</positions>
 
 	<languages folder="language">

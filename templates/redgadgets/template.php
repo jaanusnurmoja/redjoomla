@@ -90,7 +90,7 @@ defined('_JEXEC') or die('Restricted access');
 
 			<?php if ($this->countModules('grid-tab')) : ?>
 				<!-- grid-tab -->
-				<div id="grid-tab">
+				<div id="grid-tab-2">
 					<w:module type="none" name="grid-tab" chrome="xhtml" />
 				</div>
 			<?php endif; ?>
@@ -172,7 +172,17 @@ defined('_JEXEC') or die('Restricted access');
 						<w:module type="row" name="footer" chrome="wrightflexgrid" />
 					<?php endif; ?>
 				</div>
-				<div class="footer-bottom"></div>
+				<div class="footer-bottom">
+					<div class="container">
+					<?php if ($this->countModules('footer-bottom')) : ?>
+						<w:module type="row" name="footer-bottom" chrome="xhtml" />
+					<?php endif; ?>
+				</div>
+				<div class="copyright">
+					<?php if ($this->countModules('copyright')) : ?>
+						<w:module name="copyright" chrome="wrightflexgrid" />
+					<?php endif; ?>
+				</div>
 			</footer>
 		</div>
 	</div>

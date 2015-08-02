@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_REDEVENT_CATEGORIES_LAYOUT">
+		<message>
+			<![CDATA[COM_REDEVENT_CATEGORIES_LAYOUT_DESC]]>
+		</message>
+	</layout>
+	
+	<fields name="params" addfieldpath="/administrator/components/com_redevent/models/fields">
+   	<fieldset name="params" label="COM_REDEVENT_FIELDSET_LAYOUT_OPTIONS">
+			<field name="parentcategory" type="recategory" default="0" reset="true" label="COM_REDEVENT_SELECT_PARENT_CATEGORY" description="COM_REDEVENT_SELECT_PARENT_CATEGORY_DESC" />
+			<field name="display_all_categories" type="radio" default="1" label="COM_REDEVENT_DISPLAY_ALL_CATEGORIES" description="COM_REDEVENT_DISPLAY_ALL_CATEGORIES_TIP">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+
+			<field name="show_pagination" type="list"
+				description="JGLOBAL_PAGINATION_DESC"
+				label="JGLOBAL_PAGINATION_LABEL"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="2">JGLOBAL_AUTO</option>
+			</field>
+
+			<field name="show_pagination_results" type="list"
+				label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+				description="JGLOBAL_PAGINATION_RESULTS_DESC">
+
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>
